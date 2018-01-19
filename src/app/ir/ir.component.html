@@ -1,0 +1,8 @@
+<br><br>
+Desconto de IR:
+<br><input type="text" name="" placeholder="Salário" [(ngModel)]="salario">
+<input type="button" class="btn btn-primary" (click)="calcularIr()" value="Calcular valor">
+
+<p>
+Desconto IR: {{irValor | currency:'BRL'}}
+</p>

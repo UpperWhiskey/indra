@@ -1,0 +1,44 @@
+Mostrando o NgClass
+
+<br />
+
+
+<input type="button" (click)="alterarSucesso()" value="Alterar sucesso"
+
+[class.btn-danger]="!sucesso"
+[class.btn-sucesso]="sucesso"
+[style.color]="sucesso ? 'black' : 'yellow'"
+[style.border] = "sucesso ? '1px solid orange' : '10px solid'"
+
+>
+
+
+<br />
+
+
+<input type="button" value="Botão"
+[ngClass] = "{
+  'btn-danger': (!sucesso),
+  'btn-success': (sucesso)
+}"
+[ngStyle]="{
+  'border': (sucesso ? '1px solid orange': '10px solid blue'),
+  'color': (sucesso ? 'black' : 'yellow')
+}"
+/>
+
+<br />
+
+<div [ngSwitch] = "random">
+  <div *ngSwitchCase="0">ZERO</div>
+  <div *ngSwitchCase="1">HUM</div>
+  <div *ngSwitchDefault [style.color] = "cor"><h1>DEFAULT {{random}}</h1></div>
+</div>
+
+
+
+
+
+
+
+<input type="button" [value]="texto">

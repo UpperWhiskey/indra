@@ -1,0 +1,21 @@
+
+
+<p>
+
+  primeiro works! : {{url}}<br>
+
+  <img src="{{urlImage}}" [title]="url"><br>
+
+  <img [src]="urlImage" [title]="Teste"><br>
+
+  <input type="button" class="btn btn-primary" (click)="clicar()" name="" value="Clicar aqui"><br>
+
+  <input type="text" [value]="url" (input)="url = $event.target.value">
+
+  <input type="text" [(ngModel)]="url">
+
+  <input type="text" [(ngModel)]="url">
+
+  <!-- [()] Two way data binding -->
+
+</p>

@@ -1,0 +1,24 @@
+
+
+Seu nome: {{nome}} {{sobreNome}}<br>
+
+<div class="col-md-6 col-sm-12">
+ <input class="form-control" type="text" [(ngModel)] = "nome" placeholder="Nome"><br>
+ <input class="form-control" type="text" [(ngModel)] = "sobreNome" placeholder="Sobrenome">
+</div>
+<br><br><br><br><br>
+<textarea placeholder="Pedido" class="form-control col-md-6" rows="4" cols="50" [(ngModel)] = "pedido"></textarea>
+<br><br><br><br><br><br>
+
+Pedido descrito: {{pedido}}
+<br><br>
+
+<input class="btn btn-primary" type="button" (click)="confirmaPedido()" value="Confirmar pedido">
+
+<br><br>
+
+
+ <input class="form-control" type="text" [(ngModel)] = "altura" placeholder="Altura"><br>
+ <input class="form-control" type="text" [(ngModel)] = "peso" placeholder="Peso"><br>
+ <input class="btn btn-primary btn-lg" type="button" (click)="calcular()" value="Calcular IMC">
+ Seu imc é de: {{imc}}<br><br>

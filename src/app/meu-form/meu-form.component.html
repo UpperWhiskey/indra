@@ -1,0 +1,27 @@
+<form #f="ngForm" class="container" (ngSubmit)="onSubmit(f)">
+
+<div class="row col-md-12">
+  <div class="form-group col-md-6">
+    <label for="nome">Nome</label>
+    <input required pattern="[0-9]+" minlength="3" maxlength="6" type="text" name="nome" class="form-control" #nome="ngModel"
+    [(ngModel)]="f.nome">
+
+    <div class="alert alert-danger" role="alert"  *ngIf="nome.valid == false && nome.touched== true">
+      Nome invalido
+    </div>
+  </div>
+
+  <div class="form-group col-md-6">
+    <label for="email">Email</label>
+    <input type="email" name="email" class="form-control" #email="ngModel"
+
+    pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+
+    [(ngModel)]="f.email">
+  </div>
+
+</div>
+
+    <input type="submit" class="btn-lg btn-primary" value="Enviar" />
+
+</form>

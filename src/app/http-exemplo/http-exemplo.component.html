@@ -1,0 +1,9 @@
+<input type="text" (keydown.enter)="searchProjects()" [(ngModel)]="searchField"/>
+
+Total : {{total}}
+
+<ul>
+  <li *ngFor="let project of projects">
+    {{project.full_name}}
+  </li>
+</ul>
