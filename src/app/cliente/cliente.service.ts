@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
+
 export class ClienteService {
-
-
   constructor( ) { }
 
   nome = "";
@@ -14,12 +13,26 @@ export class ClienteService {
   imc: number;
   teste: any;
 
-
 getClientes(){
+return [
+  {id: 1, nome: 'Indra', descricao : 'Indra Company'},
+  {id: 2, nome: 'Vivo', descricao : 'Vivo Telefonia'},
+  {id: 3, nome: 'Original', descricao : 'Banco Original'},
+];
+}
 
-return ['Cliente 1', 'Cliente 2', 'Cliente 3'];
+  getCliente(id:number){
+   let clientes = this.getClientes();
 
- }
+   for(let i = 0; i < clientes.length; i++){
+     let cliente = clientes[i];
+
+      if(cliente.id == id){
+        return cliente;
+      }
+   }
+   return null;
+}
 
  confirmaPedido(){
 

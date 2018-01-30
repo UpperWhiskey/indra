@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormsModule} from '@angular/forms';
-import {IrComponent} from './ir.component';
+
 import {IrService} from './ir.service';
+
+import {IrComponent} from './ir.component';
 
 @NgModule({
   imports: [

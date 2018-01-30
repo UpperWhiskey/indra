@@ -1,16 +1,9 @@
 <ul>
-  <li *ngFor = "let c of clientes">{{c}}</li>
+  <li *ngFor = "let c of clientes">
+       <a [routerLink]="['/cliente', c.id]">{{c.nome}}</a>
+  </li>
 </ul>
-    <div class="row">
-      <div class="col-md-3">
-        <img class="img-responsive center-block" src="https://grandeporte.com.br/img/ead.jpeg">
-      </div>
-
-      <div class="col-md-6">
-        <img class="img-responsive center-block" src="https://grandeporte.com.br/img/ead.jpeg">
-      </div>
-
-      <div class="col-md-3">
-        <img class="img-responsive center-block" src="https://grandeporte.com.br/img/ead.jpeg">
-      </div>
-  </div>
+<div>
+    <input type="button" class="btn lg btn-primary" value="Próxima página" (click)="proximaPagina()">
+    Pagina: {{pagina}}
+</div>

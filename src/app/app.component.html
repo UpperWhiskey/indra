@@ -1,9 +1,42 @@
-<app-meu-form></app-meu-form>
+<nav class="navbar navbar-default" *ngIf="mostrarMenu == true">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="/">Indra</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li routerLinkActive="active-link"><a routerLink="/">Home</a></li>
+      <li routerLinkActive="active-link"><a routerLink="/form">Meu form</a></li>
+      <li routerLinkActive="active-link"><a routerLink="/clientes" [queryParams]="{pagina : 1}">Cliente (ngFor)</a></li>
+      <!-- <li routerLinkActive="active"><a [routerLink]="['/cliente',  idClienteForm.value]">Clientes com ID</a></li> -->
+      <li routerLinkActive="active-link"><a routerLink="/buscar-cep">Buscar CEP</a></li>
+
+      <li routerLinkActive="active-link"><a routerLink="/aluno">Aluno</a></li>
+
+      <li routerLinkActive="active-link"><a routerLink="/form-reativo">Form Reativo</a></li>
+      <li routerLinkActive="active-link"><a routerLink="login">Login</a></li>
+
+
+
+
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- <form #meuForm="ngForm">
+    <label for="">ID Cliente</label>
+    <input type="text" placeholder="ID do Cliente"name="idClienteForm" ngModel class="form-control" #idClienteForm>
+   <br />
+  </form> -->
+
+  <router-outlet></router-outlet>
+</div>
 
 <!--<app-diretivas-class-style></app-diretivas-class-style>-->
-<!--<app-primeiro></app-primeiro> -->
+
 <!-- <alert type="success">Pizzaria</alert> -->
- <!--<app-nome></app-nome><hr>-->
+<!-- <app-nome></app-nome>-->
 
 <!--<app-ciclo *ngIf="destruirCiclo == false" [contador]="numero"></app-ciclo>
 
@@ -57,7 +90,7 @@ Destruir: {{numero2}}
 
 Calculo IMC<br>
 <app-calculo>Calcular IMC</app-calculo><hr>
-<app-ir>Calculo de IR</app-ir><hr>
+
 
 
 <app-input-output numero="1" (click)="handleClick($event)" address="Avenida Guido Caloi"></app-input-output><hr>

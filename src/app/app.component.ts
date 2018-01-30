@@ -1,12 +1,17 @@
-import { Component } from '@angular/core';
+import { Component,  } from '@angular/core';
+import {AuthService} from './login/auth/auth.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
+
 export class AppComponent {
   title = 'app';
+
+mostrarMenu: boolean = false;
 
   numero : number = 15;
   numero2 : number = 0;
@@ -40,4 +45,14 @@ export class AppComponent {
   cliqueTexto(evento){
   alert('Indra '+evento)
   }
+
+ ngOnInit(){
+  this.authService.mostrarMenuEmitter.subscribe(
+    mostrar => {
+      this.mostrarMenu = mostrar;
+  });
+ }
+
+ constructor(private authService:AuthService){}
+
 }

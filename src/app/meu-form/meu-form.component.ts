@@ -14,6 +14,19 @@ export class MeuFormComponent implements OnInit {
     console.log(f);
   }
 
+  isSuccess(campo){
+    return (campo.valid == true && campo.touched==true);
+  }
+
+  isError(campo){
+    return (campo.valid == false && campo.touched == true);
+  }
+
+  aplicarCssElemento(campo){
+    return {'has-error':this.isError(campo),
+    'has-success' : this.isSuccess(campo)};
+  }
+
   ngOnInit() {
   }
 

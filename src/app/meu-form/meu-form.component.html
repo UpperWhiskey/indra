@@ -1,27 +1,28 @@
 <form #f="ngForm" class="container" (ngSubmit)="onSubmit(f)">
 
 <div class="row col-md-12">
-  <div class="form-group col-md-6">
-    <label for="nome">Nome</label>
-    <input required pattern="[0-9]+" minlength="3" maxlength="6" type="text" name="nome" class="form-control" #nome="ngModel"
+
+  <div class="form-group has-error has-feedback col-md-6" [ngClass]="aplicarCssElemento(nome)">
+
+
+    <label for="nome" class="control-label">Nome</label>
+    <input required pattern="[a-zA-Z0-9\s]+" minlength="3" maxlength="27" type="text" name="nome" class="form-control" #nome="ngModel"
     [(ngModel)]="f.nome">
 
-    <div class="alert alert-danger" role="alert"  *ngIf="nome.valid == false && nome.touched== true">
-      Nome invalido
-    </div>
+    <app-mostrar-erro [showError]="isError(nome)" [messageError]="['Nome Inválido']"> </app-mostrar-erro>
+
   </div>
 
-  <div class="form-group col-md-6">
-    <label for="email">Email</label>
-    <input type="email" name="email" class="form-control" #email="ngModel"
-
-    pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
-
-    [(ngModel)]="f.email">
+  <div class="form-group col-md-6" [ngClass]="aplicarCssElemento(email)">
+    <label for="email" class="control-label">Email</label>
+    <input type="text" name="email" class="form-control" #email="ngModel"
+    pattern="[^@]+@[^@]+\.[a-zA-z]{2,}"
+    [(ngModel)]="f.email" required [readonly]="nome.valid == false">
+    <app-mostrar-erro [showError]="isError(nome)" [messageError]="'Email Inválido'"></app-mostrar-erro>
   </div>
 
 </div>
 
-    <input type="submit" class="btn-lg btn-primary" value="Enviar" />
+    <input type="submit" class="btn-lg btn-primary" value="Enviar" [disabled]="f.valid == false" />
 
 </form>

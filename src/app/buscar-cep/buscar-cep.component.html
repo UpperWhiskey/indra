@@ -1,0 +1,51 @@
+<br />
+<br />
+
+<form #f="ngForm" class="container" (ngSubmit)="onSubmit(f)">
+
+   <div class="row">
+
+     <div class="col-md-3">
+      <label for="cep">CEP:</label>
+      <input required pattern="[0-9]*" (keydown.enter)="buscar(f.cep, f)" maxlength="8" [(ngModel)]="f.cep" minlength="8" type="text" name="cep" #cep="ngModel" class="form-control" />
+     </div>
+
+   <div class="col-md-6">
+     <label for="logradouro">Logradouro</label>
+     <input type="text" class="form-control" readonly [(ngModel)]="f.logradouro" #logradouro="ngModel" name="logradouro">
+   </div>
+
+   <div class="col-md-3">
+      <label for="numero">Numero</label>
+      <input type="text" class="form-control" [(ngModel)]="f.numero" #numero="ngModel" name="numero">
+    </div>
+
+ </div>
+
+   <div class="col-md-6">
+     <label for="complemento">Complemento</label>
+     <input type="text" class="form-control" [(ngModel)]="f.complemento" #complemento="ngModel" name="complemento">
+   </div>
+
+
+   <div class="col-md-4">
+     <label for="bairro">Bairro</label>
+     <input type="text" class="form-control"  readonly [(ngModel)]="f.bairro" #bairro="ngModel" name="bairro">
+   </div>
+
+   <div class="col-md-2">
+     <label for="uf">UF</label>
+     <input type="text" class="form-control" readonly [(ngModel)]="f.uf" #uf="ngModel" name="uf">
+   </div>
+
+
+    <input type="submit" name="" value="Enviar" class="btn-lg btn-info">
+
+  <!--
+
+  Existe duas formas de fazer formulário: Template driven e ractive driven,
+  onde geramos o componente do angular para cuspir o código.
+  
+  -->
+
+ </form>
